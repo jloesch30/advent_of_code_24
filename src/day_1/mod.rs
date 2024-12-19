@@ -44,14 +44,14 @@ pub fn part_1() -> Result<String, io::Error> {
 pub fn part_2() -> Result<String, io::Error> {
     let reader = read_file()?;
 
-    let mut column1 = Vec::new();
-    let mut column2 = Vec::new();
+    let mut column1: Vec<i32> = Vec::new();
+    let mut column2: Vec<i32> = Vec::new();
 
     for line in reader.lines() {
         let line = line?;
         let parts: Vec<&str> = line.split_whitespace().collect();
-        column1.push(parts[0].parse::<i32>().unwrap());
-        column2.push(parts[1].parse::<i32>().unwrap());
+        column1.push(parts[0].parse().unwrap());
+        column2.push(parts[1].parse().unwrap());
     }
 
     // Create a hash map of the right list
